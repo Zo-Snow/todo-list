@@ -27,4 +27,4 @@ Further the "All tasks" section can have sub sections of lists named "Completed"
 Plus note:-  
 
 I might add some more neat features later such as a cancel button when deciding to add a new task
-or a project and more c: 
+or a project, making the date display in the tasks and today's list's heading more beautifully in a nice format like "Tuesday, Feb 6 2024" and more c: 
