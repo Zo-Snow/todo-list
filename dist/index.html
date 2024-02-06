@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Diphylleia&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <dialog id="todo-form">
+        
+        <div class="form-row">
+          <p class="p-required">All fields are required</p> 
+          <p class="info-icon">i</p>
+          <div class="hide">Note: When adding task to today's tasks, due date will be converted to "Today" automatically.<br/>Emit choosing due date for adding today's task functionality has not been added yet</div>    
+        </div>
+        
+        
+        <form method="dialog" class="tasks-form">
+            <div class="form-row">
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" maxlength="70" required>
+            </div>
+            <div class="form-row">
+                <label for="description">Description</label>
+                <input type="text" name="description" id="description" maxlength="200" required>
+            </div>
+            <div class="form-row">
+                <label for="date">Due Date</label>
+                <input type="date" name="date" id="date" required>
+            </div>
+            <div class="urgency-div">
+                <p>Urgency Level:</p>
+                <input type="radio" id="high" name="urgency" value="high" required>
+                <label for="high">High</label>
+
+                <input type="radio" id="medium" name="urgency" value="medium">
+                <label for="medium">Medium</label>
+
+                <input type="radio" id="low" name="urgency" value="low">
+                <label for="low">Low</label>
+            </div>
+            <button type="submit" class="plus-todo-btn">+</button>
+            
+        </form>
+    </dialog>
+
+    <dialog id="project-form">
+        <form method="dialog" class="project-form-element">
+            <div class="form-col">
+                <label for="project-title">Title</label>
+                <input type="text" name="project-title" id="project-title" maxlength="50" placeholder="Enter project title" required>
+                <button type="submit" class="plus-project-btn">+</button>
+            </div>
+        </form>
+    </dialog>
+
+    <div id="content">
+        
+    </div>
+
+    <footer>Copyright @ zo-snow 2024 ♥</footer>
+
+    <script src="./main.js"></script>
+</body>
+</html>
