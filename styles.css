@@ -1,0 +1,410 @@
+:root {
+    --main-pink: #edadc7c3;
+    --main-violet: #ccb3d8;
+}
+
+body {
+    background-color: rgb(252, 252, 252);
+    color: rgba(103, 103, 103, 0.795);
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    background-image: url(./images/jess-bailey-rBh0T1QaC1Q-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    user-select: none;
+}
+
+/* Font for all  */
+
+dialog, .hide, .nav-home, .nav-projects, .nav-todos, footer, .card, .accordion-content, .accordion-content-btns > button {
+    font-family: "Abel", sans-serif;
+    letter-spacing: 1px;
+    color: gray;
+}
+
+.projects-btn, .todo-btn, .todays-btn, .upcoming-btn {
+    font-family: "Diphylleia", serif;
+    font-size: 1.3rem;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(174, 173, 173, 0.886);
+}
+
+.nav-home, .nav-projects, .nav-todos  {  
+    padding: 13px 27px 13px 27px;
+    border-radius: 1px;
+    box-shadow: 1px 1px 10px rgba(236, 236, 236, 0.306);
+    margin-top: 8%;
+    width: 63px;
+    transition: all .4s ease;
+    letter-spacing: 2px;
+    background-color: var(--main-pink);
+    color: white;
+    border-bottom: 2px solid rgba(125, 94, 108, 0.126)
+}
+
+.nav-home:hover, .nav-projects:hover, .nav-todos:hover {
+     box-shadow: 1px 1px 10px white;
+     background-color: white;
+     transform: scale(1.05);
+     color: var(--main-pink);
+}
+
+h1 {
+    font-family: "Corinthia", cursive;
+    color: var(--main-violet);
+    margin: 50px;
+    font-size: 4rem;
+}
+
+.home-items {
+    padding-right: 31px;
+}
+
+.home-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}
+
+.home-icon {
+    width: 40px;
+}
+
+.projects-btn, .todo-btn, .todays-btn, .upcoming-btn {
+    width: 230px;
+    height: 230px;
+    background-image: url(./images/smaller-mains.png);
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 95%;
+    transition: all .5s ease;
+
+}
+
+.projects-btn:hover, .todo-btn:hover, .todays-btn:hover, .upcoming-btn:hover {
+    transform: scale(1.03);
+    opacity: 100%;
+}
+
+.todays-btn, .upcoming-btn {
+    background-image: url(./images/smaller-rings.png);
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar, .home-items, .project-cards, .todo-items {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.navbar {
+    gap: 15px;
+}
+
+.card, .add-project-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.893);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.091);
+    border-radius: 8px;
+    padding: 10px;
+    color: rgb(188, 188, 188);
+    font-size: 1.2rem;
+    transition: all .6s ease;
+}
+
+.card:hover, .add-project-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 0px 20px white;
+}
+
+.add-project-btn {
+    justify-content: center;
+}
+
+.trash, .edit-title-name {
+    display: none;
+    width: 25px;
+    height: 25px;
+    margin-top: 10px;
+    background-image: url(./images/trash-icon.png);
+    background-size: contain;
+    transition: all .3s ease;
+}
+
+.edit-title-name {
+    background-image: url(./images/edit-icon.png);
+}
+
+.card:hover > .trash {  
+    display: block;
+    
+}
+
+.card:hover > .edit-title-name {
+    display: block;
+    margin-top: 22px;
+}
+
+.card:hover > .edit-title-name:hover {
+    background-image: url(./images/edit-icon-light.png);
+    transform: scale(1.05);
+}
+
+.card:hover > .trash:hover {
+    background-image: url(./images/trash-icon-red.png);
+    transform: scale(1.05);
+}
+
+.add-project-btn {
+    font-size: 4rem;
+    color: rgb(218, 218, 218);
+}
+
+/* Accordion Styling */
+
+.accordion {   
+    opacity: 80%;
+    color: black;
+    width: 70%;
+    border-radius: 10px;
+    margin: 20px 0px 0px 0px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.114);
+}
+
+.accordion-expander {
+    overflow: hidden;
+    font-family: "Diphylleia", serif;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    border-radius: 10px;
+    padding-right: 15px;
+    padding-left: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.084);
+}
+
+.accordion-expander::after {
+    content: "\25be"; 
+    transform: scale(1.5);
+}
+
+.accordion-expander-active::after {
+    content: "\25b4"; 
+}
+
+.accordion-expander-active + .accordion-content {
+    display: block;
+}
+
+.accordion-btn {
+    background-color: rgba(255, 255, 255, 0);
+    width: 100%;
+    border: none;
+    text-align: left;
+    font-size: 1.1rem;
+    padding: 10px 5px 14px 8px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.accordion-content {
+    display: none;
+    text-align: left;
+    
+}
+
+.accordion-content-btns {
+    display: flex;  
+}
+
+.accordion-content, .accordion-content-btns > button {
+    color: black;
+}
+
+.accordion-content-btns > button {
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0);
+    height: 40px;
+}
+
+.accordion-content-btns > button:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.404);
+}
+
+.accordion-content > p {
+    padding: 0px 25px;
+}
+
+.add-todo-btn, .plus-todo-btn, .plus-project-btn {
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.084);
+    border-radius: 10px;
+    font-size: 1.5rem;
+    width: 70px;
+    padding: 8px;
+    margin: 50px;
+}
+
+.add-todo-btn:hover {
+    box-shadow: 0px 0px 10px white;
+}
+
+.accordion-input:checked + .accordion-btn {
+    opacity: 50%;
+    text-decoration:line-through;
+}
+
+/* Form styling */
+
+dialog {
+    border: none;
+    box-shadow: 0px 0px 10px white;
+}
+
+.urgency-div, .p-required {
+    text-align: left;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 15px;
+}
+
+.info-icon {
+    border: 1px solid rgba(113, 113, 113, 0.662);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-family: "Diphylleia", serif;
+    user-select: none;
+}
+
+.hide {
+    display: none;
+    transition: all .3s ease;
+}
+
+.info-icon:hover + .hide {
+    display: block;  
+    background-color: gray;  
+    text-align: left;
+    position: fixed;
+    pointer-events:none;
+    color: rgba(255, 255, 255, 0.877);
+    padding: 15px;
+}
+
+.form-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+.form-col > input {
+    text-align: center;
+}
+
+#title, #description, #date, #project-title {
+    width: 200px;
+    height: 25px;
+    border: 1px solid var(--main-pink);
+    border-radius: 10px;
+    color: rgb(167, 129, 183);
+}
+
+#title:focus, #description:focus, #date:focus, #project-title:focus {
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 10px var(--main-pink);
+}
+
+input[type="radio"], input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none; 
+    width: .7rem;
+    height: .7rem;
+    font-size: 2rem;
+    padding: 0.1rem;
+    border: 1px solid var(--main-violet);
+    border-radius: 0.5rem;
+}
+
+input[type="checkbox"] {
+    border: 1px solid black;
+}
+
+input[type="radio"]:checked {
+    content: '';  
+    transform: scale(1);
+    border: none;
+    background-color: var(--main-pink);
+}
+
+input[type="checkbox"]:checked {
+    background-color: rgb(48, 48, 48);
+}
+
+.plus-todo-btn, .plus-project-btn {
+    margin: 30px 0px 20px 0px;
+    border: none;
+    color: rgb(177, 159, 184);
+}
+
+.plus-project-btn {
+    margin: 10px 0px 10px 0px;
+}
+
+.plus-todo-btn:hover, .plus-project-btn:hover {
+    background-color: rgb(217, 197, 225);
+    color: white;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-pink);
+    height: 40px;
+    color: white; 
+    padding: 10px 0px 10px 0px;
+    margin-top: 60px;
+}
+
+
+
+
+
+
+
+
